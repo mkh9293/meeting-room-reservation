@@ -18,7 +18,7 @@ public class ReservationTest {
 	}
 	
 	@Test
-	public void ¿¹¾àÅ×½ºÆ®() {
+	public void ì˜ˆì•½í…ŒìŠ¤íŠ¸() {
 		String roomName = "A";
 		String userName = "mkh";
 		LocalDateTime reservationStartTime = LocalDateTime.now();
