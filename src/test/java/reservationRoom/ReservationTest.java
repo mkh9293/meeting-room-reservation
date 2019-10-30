@@ -18,7 +18,7 @@ public class ReservationTest {
 	}
 	
 	@Test
-	public void testReservation() {
+	public void 예약테스트() {
 		String roomName = "A";
 		String userName = "mkh";
 		LocalDateTime reservationStartTime = LocalDateTime.now();
@@ -30,4 +30,5 @@ public class ReservationTest {
 		
 		assertTrue(result);
 	}
+	
 }
