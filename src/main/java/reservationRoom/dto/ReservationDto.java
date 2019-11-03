@@ -2,7 +2,6 @@ package reservationRoom.dto;
 
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,16 +9,21 @@ import reservationRoom.entity.Reservation;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class ReservationDto {
 	private String roomName;
 	private String userName;
-	private LocalDateTime reservationStartTime;
-	private LocalDateTime reservationEndTime;
-	private int repeatReservationCount;
+	private LocalDateTime startDate;
+	private LocalDateTime endDate;
+	private int repeatCount;
 	
 	public Reservation toEntity() {
-		return new Reservation(roomName, userName, reservationStartTime, reservationEndTime, repeatReservationCount);
+		return Reservation.builder()
+				.roomName(roomName) 
+				.userName(userName)
+				.startDate(startDate)
+				.endDate(endDate)
+				.repeatCount(repeatCount)
+				.build();
 	}
 }

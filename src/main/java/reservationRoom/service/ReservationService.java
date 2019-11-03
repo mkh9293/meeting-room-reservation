@@ -12,6 +12,6 @@ public class ReservationService {
 	private ReservationRepository reservationRepository;
 	
 	public void reservation(ReservationDto reservation) {
-		reservationRepository.save(reservation);
+		reservationRepository.save(reservation.toEntity());
 	}
 }

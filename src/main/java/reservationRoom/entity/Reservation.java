@@ -9,30 +9,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="Reservations")
-@Data
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "room_name")
+	@Column
 	private String roomName;
 	
-	@Column(name = "user_name")
+	@Column
 	private String userName;
 	
-	@Column(name = "start_date")
+	@Column
 	private LocalDateTime startDate;
 	
-	@Column(name = "end_date")
+	@Column
 	private LocalDateTime endDate;
 	
+	@Column
+	private int repeatCount;
+	
+	@Builder
+	public Reservation(String roomName, String userName, LocalDateTime startDate, LocalDateTime endDate, int repeatCount) {
+		this.roomName = roomName;
+		this.userName = userName;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.repeatCount = repeatCount;
+	}
 }
