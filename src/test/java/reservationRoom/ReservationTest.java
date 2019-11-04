@@ -23,7 +23,7 @@ public class ReservationTest {
 	
 	@Autowired
 	private ReservationRepository reservationRepository;
-	
+
 	@Test
     public void 예약불러오기_테스트() {
         //given
