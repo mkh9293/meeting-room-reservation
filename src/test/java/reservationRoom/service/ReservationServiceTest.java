@@ -125,7 +125,7 @@ public class ReservationServiceTest {
 	@Test
 	public void 중첩시간일때_주단위예약_테스트() {
 		//given
-		LocalDateTime startTime = LocalDateTime.of(LocalDate.of(2019, 11, 05), LocalTime.of(13, 0)); 
+		LocalDateTime startTime = LocalDateTime.of(LocalDate.of(2019, 10, 30), LocalTime.of(15, 0)); 
 		LocalDateTime endTime	= startTime.plusHours(3);
 		Reservation reservation = Reservation.builder()
 										.roomName("A")

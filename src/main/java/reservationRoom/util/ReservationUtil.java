@@ -39,13 +39,14 @@ public class ReservationUtil {
 		
 		do {
 		
-			if(t1.getStartDate().isAfter(startDate) && t1.getEndDate().isBefore(startDate) ||
+			if(t1.getStartDate().equals(startDate) || t1.getEndDate().equals(endDate) ||
+					t1.getStartDate().isAfter(startDate) && t1.getEndDate().isBefore(startDate) ||
 					t1.getStartDate().isBefore(endDate) && t1.getEndDate().isAfter(endDate)) {
 				return true;
 			}
 			
-			startDate = startDate.plusDays(1);
-			endDate = endDate.plusDays(1);
+			startDate = startDate.plusWeeks(1);
+			endDate = endDate.plusWeeks(1);
 			repeatCount--;
 		} while(repeatCount > 0);
 		

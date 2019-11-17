@@ -8,6 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -23,15 +29,21 @@ public class Reservation {
 	private long id;
 	
 	@Column
+	@NotEmpty
 	private String roomName;
 	
 	@Column
+	@NotEmpty
 	private String userName;
 	
 	@Column
+	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime startDate;
 	
 	@Column
+	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime endDate;
 	
 	@Column
